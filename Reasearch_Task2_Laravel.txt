@@ -1,0 +1,60 @@
+Write a short explanation for each folder (app - routes - resources - public - config - database)
+1- app :
+This is the core of your application logic. 
+contains Controllers, Models,Services, Jobs, Policies, Middleware, etc.
+
+2- routes :
+Defines application URLs and what happens when users visit them.
+contains Common files: web.php → Web routes (views, forms, sessions), api.php → API routes (JSON responses), console.php → Artisan commands
+
+3- resources:
+Contains frontend-related files.
+contains Blade views (.blade.php), CSS, JS 
+
+4- public
+The entry point of your Laravel application.
+contains index.php (starts Laravel) , Public assets (images, CSS, JS)
+
+5- config
+Purpose:
+Holds configuration files for your application.
+contains: Database config, Mail config, Cache config
+
+6- database
+Everything related to database structure and data.
+contains: Migrations (tables), Seeders (sample data), Factories (fake data)
+
+Identify where MVC lives in the project?
+it distributes MVC across specific directories:
+Model->app/Models
+View->resources/views
+Controller->app/Http/Controllers
+-----------------------------------------------------------------------------------------------------------
+
+List 3 Artisan commands and Explain briefly what each command does?
+1- php artisan list => to see a list of all available Artisan commands
+2- php artisan make:controller => produce a controller in the app/Http/Controllers/ location 
+3- php artisan serve => Run Laravel local server (127.0.0.1:8000)
+-----------------------------------------------------------------------------------------------------------
+
+Explain the request flow in simple words:
+Request → Route → Controller →View → Response
+answer: The user sends a request, the route directs it to the controller, the controller gets data from the model, 
+passes it to the view, and the browser receives the response.
+-----------------------------------------------------------------------------------------------------------
+
+Explain how data is shown in a Blade file
+When you want to show data in a Blade file, the controller first collects the data from the database using a model.
+Then, it passes that data to the Blade view. Inside the Blade file, you can use {{ }} to display variables 
+and @foreach to loop through lists of data. Laravel turns this Blade template into regular HTML and sends it to the browser so the user can see it.
+-----------------------------------------------------------------------------------------------------------
+
+Explain how layouts help organize views?
+Layouts in Laravel help organize views by allowing you to create a common template (like a header, footer, or sidebar)
+that multiple pages can share. Instead of repeating the same HTML in every view
+This makes your views cleaner, easier to maintain, and consistent across the site.
+-----------------------------------------------------------------------------------------------------------
+
+Explain when and why we use conditionals & loops in Blade?
+We use conditionals (@if, @elseif, @else) in Blade when we want to show or hide content based on some condition.
+We use loops (@foreach, @for, @while) when we want to repeat a block of HTML for multiple items.
